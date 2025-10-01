@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osama's Official Fan Club (Not Really)</title>
+    <title>The Official Osama Fan Club (Not Really)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -32,12 +32,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
             position: relative;
             z-index: 10;
         }
 
         header {
+            text-align: center;
             padding: 30px 0;
             position: relative;
         }
@@ -45,7 +45,7 @@
         h1 {
             font-size: 4rem;
             color: #fff;
-            text-shadow: 3px 3px 0 #ff00ff, 6px 6px 0 #00ffff;
+            text-shadow: 3px 3px 0 #333, 6px 6px 0 #ff6b6b;
             margin-bottom: 10px;
             animation: bounce 2s infinite;
             display: inline-block;
@@ -60,196 +60,130 @@
         .subtitle {
             font-size: 1.5rem;
             color: #fff;
+            text-shadow: 2px 2px 0 #333;
             margin-bottom: 30px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
 
         .profile-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px auto;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-            transform: rotate(-1deg);
-            transition: transform 0.3s;
-        }
-
-        .profile-card:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 5px solid #ff00ff;
-            position: relative;
-            overflow: hidden;
-            background: url('https://picsum.photos/seed/osama-funny/200/200.jpg') center/cover;
-        }
-
-        .profile-img::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.3));
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .profile-name {
-            font-size: 2.5rem;
-            color: #ff00ff;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 0 #00ffff;
-        }
-
-        .profile-title {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 30px 0;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff00ff;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .fun-facts {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 30px;
             margin: 30px auto;
             max-width: 800px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .fun-facts h2 {
-            font-size: 2rem;
-            color: #ff00ff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 0 #00ffff;
-        }
-
-        .fact-list {
-            list-style: none;
-            text-align: left;
-        }
-
-        .fact-list li {
-            margin-bottom: 15px;
-            padding-left: 30px;
             position: relative;
-            font-size: 1.2rem;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #ff6b6b;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 2.5rem;
             color: #333;
+            margin-bottom: 10px;
         }
 
-        .fact-list li::before {
-            content: "💨";
-            position: absolute;
-            left: 0;
-            animation: float 3s infinite;
+        .profile-title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .fun-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .fact-card h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .fact-card p {
+            color: #555;
+            line-height: 1.5;
         }
 
         .fart-button {
-            background: linear-gradient(45deg, #ff00ff, #00ffff);
-            color: white;
-            border: none;
+            display: block;
+            margin: 30px auto;
             padding: 15px 30px;
             font-size: 1.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .fart-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .fart-button:active {
-            transform: scale(0.95);
-        }
-
-        .fart-button::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .fart-button:active::after {
-            width: 300px;
-            height: 300px;
+            transform: scale(0.98);
         }
 
         .fart-counter {
-            font-size: 1.5rem;
-            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #fff;
             margin: 20px 0;
+            text-shadow: 2px 2px 0 #333;
         }
 
-        .fart-cloud {
+        .fart-emoji {
             position: absolute;
             font-size: 3rem;
-            animation: floatUp 3s forwards;
+            animation: float-up 3s ease-out forwards;
             pointer-events: none;
             z-index: 100;
         }
 
-        @keyframes floatUp {
+        @keyframes float-up {
             0% {
                 opacity: 1;
-                transform: translateY(0) scale(0.5);
+                transform: translateY(0) scale(1);
             }
             100% {
                 opacity: 0;
@@ -257,170 +191,198 @@
             }
         }
 
-        .hidden-message {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transform: translateX(400px);
-            transition: transform 0.5s;
-            max-width: 300px;
-            z-index: 1000;
-        }
-
-        .hidden-message.show {
-            transform: translateX(0);
-        }
-
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #ff00ff;
-            position: absolute;
-            animation: confetti-fall 3s linear forwards;
-            z-index: 1000;
-        }
-
-        @keyframes confetti-fall {
-            0% {
-                transform: translateY(-100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
         .achievement {
-            background: rgba(255, 215, 0, 0.9);
-            color: #333;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 600px;
-            display: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .achievement.show {
-            display: block;
-            animation: slideIn 0.5s forwards;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .achievement h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .achievement p {
-            font-size: 1.1rem;
-        }
-
-        .achievement::before {
-            content: "🏆";
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-        }
-
-        footer {
-            margin-top: 50px;
+            background: #fff;
+            border-radius: 15px;
             padding: 20px;
-            color: white;
-            font-size: 1.2rem;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease;
         }
 
-        .secret-code {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
+        .achievement:hover {
+            transform: translateX(10px);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+        }
+
+        .achievement-text h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .achievement-text p {
+            color: #666;
+        }
+
+        .quote-section {
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            display: none;
-            z-index: 2000;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            color: #333;
+            font-style: italic;
             text-align: center;
-        }
-
-        .secret-code.show {
-            display: block;
-            animation: popIn 0.5s forwards;
-        }
-
-        @keyframes popIn {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-                opacity: 0;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-        }
-
-        .secret-code h2 {
-            color: #ff00ff;
             margin-bottom: 20px;
+            position: relative;
         }
 
-        .secret-code input {
-            padding: 10px;
+        .quote::before, .quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: #ff6b6b;
+            position: absolute;
+        }
+
+        .quote::before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .quote::after {
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .quote-author {
+            text-align: right;
             font-size: 1.2rem;
-            border: 2px solid #ff00ff;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            width: 100%;
+            color: #666;
         }
 
-        .secret-code button {
-            background: #ff00ff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 10s infinite linear;
+            opacity: 0.7;
+            z-index: 1;
         }
 
-        .secret-code button:hover {
-            background: #ff66ff;
+        @keyframes float {
+            0% { transform: translateX(-100px) rotate(0deg); }
+            100% { transform: translateX(calc(100vw + 100px)) rotate(360deg); }
         }
 
-        .easter-egg {
+        .secret-button {
             position: fixed;
             bottom: 20px;
-            left: 20px;
-            font-size: 1.5rem;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
             cursor: pointer;
-            transition: all 0.3s;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
             z-index: 100;
         }
 
-        .easter-egg:hover {
-            transform: scale(1.2) rotate(10deg);
+        .secret-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .modal-button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 0 #333;
+        }
+
+        .footer-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
@@ -428,299 +390,259 @@
                 font-size: 2.5rem;
             }
             
-            .profile-card {
-                margin: 20px;
+            .subtitle {
+                font-size: 1.2rem;
             }
             
-            .stats {
-                flex-direction: column;
-            }
-            
-            .stat {
-                margin-bottom: 15px;
+            .fun-facts {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Floating Emojis -->
+    <div class="floating-emoji" style="top: 10%; animation-delay: 0s;">💨</div>
+    <div class="floating-emoji" style="top: 20%; animation-delay: 2s;">🤣</div>
+    <div class="floating-emoji" style="top: 30%; animation-delay: 4s;">👃</div>
+    <div class="floating-emoji" style="top: 40%; animation-delay: 6s;">🤢</div>
+    <div class="floating-emoji" style="top: 50%; animation-delay: 8s;">😂</div>
+    <div class="floating-emoji" style="top: 60%; animation-delay: 10s;">💩</div>
+    <div class="floating-emoji" style="top: 70%; animation-delay: 12s;">🤪</div>
+    <div class="floating-emoji" style="top: 80%; animation-delay: 14s;">🤭</div>
+
     <div class="container">
         <header>
             <h1>Osama's Official Fan Page</h1>
-            <p class="subtitle">The Legend, The Myth, The... Well, Just Osama</p>
+            <p class="subtitle">(Definitely Not Created by His Friends to Troll Him)</p>
         </header>
 
-        <main>
-            <section class="profile-card">
-                <div class="profile-img"></div>
-                <h2 class="profile-name">Osama "The Gassy" Al-Famous</h2>
-                <p class="profile-title">Professional Fart Connoisseur & Part-Time Human</p>
-                
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number" id="fartCount">0</span>
-                        <span class="stat-label">Farts Unleashed</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Awkward Moments</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">1</span>
-                        <span class="stat-label">Friend Who Made This</span>
-                    </div>
-                </div>
-                
-                <button class="fart-button" id="fartButton">
-                    <i class="fas fa-wind"></i> Summon The Gas
-                </button>
-                
-                <div class="fart-counter">
-                    You've unleashed <span id="fartCounter">0</span> farts so far!
-                </div>
-            </section>
-
-            <section class="fun-facts">
-                <h2>Fun Facts About Osama</h2>
-                <ul class="fact-list">
-                    <li>Osama's farts have been classified as a natural disaster in 3 countries</li>
-                    <li>Scientists believe Osama's digestive system is actually a portal to another dimension</li>
-                    <li>Osama once cleared an entire elevator with a single "silent but deadly"</li>
-                    <li>Osama's favorite food is beans, because he "likes the aftermath"</li>
-                    <li>Osama can communicate with dogs using only his flatulence</li>
-                    <li>Osama's record for consecutive farts is 37 (he was practicing for the Olympics)</li>
-                    <li>Osama's farts have their own weather pattern</li>
-                </ul>
-            </section>
-
-            <div class="achievement" id="achievement">
-                <h3>Achievement Unlocked!</h3>
-                <p id="achievementText">You've discovered Osama's secret power!</p>
+        <section class="profile-card">
+            <img src="https://picsum.photos/seed/osama123/200/200.jpg" alt="Osama" class="profile-image" id="profileImage">
+            <h2 class="profile-name">Osama "The Fart Master" [Last Name]</h2>
+            <p class="profile-title">Professional Fart Connoisseur & Expert at Clearing Rooms</p>
+            
+            <div class="fart-counter">
+                <p>Fart Counter: <span id="fartCount">0</span> farts unleashed</p>
             </div>
-        </main>
+            
+            <button class="fart-button" id="fartButton">
+                <i class="fas fa-wind"></i> Unleash the Power
+            </button>
+        </section>
 
-        <footer>
-            <p>This website was created with love (and a gas mask) by Osama's "best" friend</p>
-            <p>Disclaimer: No actual farts were harmed in the making of this website</p>
-        </footer>
+        <section class="fun-facts">
+            <div class="fact-card" data-fart="1">
+                <h3><i class="fas fa-star"></i> Superpower</h3>
+                <p>Can clear a room in 3.2 seconds flat with his signature "Silent but Deadly" technique.</p>
+            </div>
+            
+            <div class="fact-card" data-fart="2">
+                <h3><i class="fas fa-trophy"></i> Achievement</h3>
+                <p>Once made a dog faint from 10 feet away. The dog has never been the same since.</p>
+            </div>
+            
+            <div class="fact-card" data-fart="3">
+                <h3><i class="fas fa-heart"></i> Hidden Talent</h3>
+                <p>Can communicate with aliens using only fart sounds. They're not impressed.</p>
+            </div>
+            
+            <div class="fact-card" data-fart="4">
+                <h3><i class="fas fa-bolt"></i> Special Skill</h3>
+                <p>Can change the weather with his farts. Usually makes it rain... tears.</p>
+            </div>
+            
+            <div class="fact-card" data-fart="5">
+                <h3><i class="fas fa-fire"></i> World Record</h3>
+                <p>Longest fart ever recorded: 47 seconds. Scientists are still studying this phenomenon.</p>
+            </div>
+            
+            <div class="fact-card" data-fart="6">
+                <h3><i class="fas fa-brain"></i> Genius</h3>
+                <p>Invented a new language based entirely on fart sounds. No one understands it.</p>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="quote">
+                I don't always fart, but when I do, I make sure everyone knows it's me. It's my signature move.
+            </div>
+            <p class="quote-author">- Osama, probably</p>
+        </section>
+
+        <section class="achievements">
+            <div class="achievement">
+                <div class="achievement-icon">🥇</div>
+                <div class="achievement-text">
+                    <h3>Room Clearer</h3>
+                    <p>Awarded for exceptional ability to empty any room within seconds</p>
+                </div>
+            </div>
+            
+            <div class="achievement">
+                <div class="achievement-icon">🎭</div>
+                <div class="achievement-text">
+                    <h3>Master of Disguise</h3>
+                    <p>Can blame his farts on anyone, including the family dog</p>
+                </div>
+            </div>
+            
+            <div class="achievement">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-text">
+                    <h3>Propulsion Expert</h3>
+                    <p>Once propelled himself across a room using only fart power</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="hidden-message" id="hiddenMessage">
-        <p>Psst... Osama, your friend thinks you're awesome... but also really gassy!</p>
+    <button class="secret-button" id="secretButton">
+        <i class="fas fa-question"></i>
+    </button>
+
+    <div class="modal" id="secretModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="modal-title">You've Discovered Osama's Secret!</h2>
+            <p class="modal-text">Osama's farts are so powerful, they've been classified as a natural disaster in 12 countries.</p>
+            <button class="modal-button" id="modalButton">Unleash Ultimate Fart</button>
+        </div>
     </div>
 
-    <div class="secret-code" id="secretCode">
-        <h2>Enter The Secret Code</h2>
-        <p>Hint: It's what Osama does best...</p>
-        <input type="text" id="codeInput" placeholder="Type the secret code">
-        <button id="submitCode">Submit</button>
-    </div>
-
-    <div class="easter-egg" id="easterEgg">🥚</div>
+    <footer>
+        <p class="footer-text">Created with love (and gas) by Osama's "friends"</p>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
 
     <script>
-        // Fart sound simulation using Web Audio API
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        function playFartSound() {
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(80, audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(40, audioContext.currentTime + 0.5);
-            
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.5);
-            
-            // Add some noise for authenticity
-            const bufferSize = audioContext.sampleRate * 0.5;
-            const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-            const output = buffer.getChannelData(0);
-            
-            for (let i = 0; i < bufferSize; i++) {
-                output[i] = Math.random() * 2 - 1;
-            }
-            
-            const whiteNoise = audioContext.createBufferSource();
-            whiteNoise.buffer = buffer;
-            
-            const noiseGain = audioContext.createGain();
-            noiseGain.gain.setValueAtTime(0.1, audioContext.currentTime);
-            noiseGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-            
-            whiteNoise.connect(noiseGain);
-            noiseGain.connect(audioContext.destination);
-            whiteNoise.start();
-        }
+        // Fart sound collection
+        const fartSounds = [
+            'https://assets.mixkit.co/sfx/preview/mixkit-fart-in-the-crowd-3227.mp3',
+            'https://assets.mixkit.co/sfx/preview/mixkit-long-fart-393.mp3',
+            'https://assets.mixkit.co/sfx/preview/mixkit-short-fart-1539.mp3',
+            'https://assets.mixkit.co/sfx/preview/mixkit-wet-fart-2889.mp3',
+            'https://assets.mixkit.co/sfx/preview/mixkit-squeaky-fart-1540.mp3'
+        ];
+
+        // Fart emojis
+        const fartEmojis = ['💨', '💩', '🤢', '🤮', '👃', '😷', '🤧', '😵', '🤯'];
 
         // Fart counter
         let fartCount = 0;
-        const fartButton = document.getElementById('fartButton');
         const fartCountElement = document.getElementById('fartCount');
-        const fartCounterElement = document.getElementById('fartCounter');
-        
-        fartButton.addEventListener('click', function() {
+        const fartButton = document.getElementById('fartButton');
+        const profileImage = document.getElementById('profileImage');
+
+        // Play fart sound function
+        function playFartSound() {
+            const randomSound = fartSounds[Math.floor(Math.random() * fartSounds.length)];
+            const audio = new Audio(randomSound);
+            audio.play();
+            
+            // Update fart counter
             fartCount++;
             fartCountElement.textContent = fartCount;
-            fartCounterElement.textContent = fartCount;
             
-            // Play fart sound
-            playFartSound();
+            // Create floating fart emoji
+            createFartEmoji();
             
-            // Create fart cloud emoji
-            const fartCloud = document.createElement('div');
-            fartCloud.className = 'fart-cloud';
-            fartCloud.textContent = '💨';
-            fartCloud.style.left = Math.random() * window.innerWidth + 'px';
-            fartCloud.style.top = Math.random() * window.innerHeight + 'px';
-            document.body.appendChild(fartCloud);
-            
-            // Remove fart cloud after animation
+            // Animate profile image
+            profileImage.style.transform = 'scale(1.2) rotate(10deg)';
             setTimeout(() => {
-                fartCloud.remove();
-            }, 3000);
-            
-            // Check for achievements
-            checkAchievements();
-        });
-        
-        // Achievement system
-        function checkAchievements() {
-            const achievement = document.getElementById('achievement');
-            const achievementText = document.getElementById('achievementText');
-            
-            if (fartCount === 1) {
-                achievementText.textContent = "First Fart! You've unleashed the beast!";
-                showAchievement();
-            } else if (fartCount === 10) {
-                achievementText.textContent = "Fart Novice! Osama would be proud!";
-                showAchievement();
-            } else if (fartCount === 25) {
-                achievementText.textContent = "Fart Expert! You're reaching Osama's level!";
-                showAchievement();
-            } else if (fartCount === 50) {
-                achievementText.textContent = "Fart Master! You've surpassed Osama!";
-                showAchievement();
-                createConfetti();
-            } else if (fartCount === 100) {
-                achievementText.textContent = "FART LEGEND! You are the chosen one!";
-                showAchievement();
-                createConfetti();
-            }
+                profileImage.style.transform = 'scale(1) rotate(0deg)';
+            }, 300);
         }
-        
-        function showAchievement() {
-            const achievement = document.getElementById('achievement');
-            achievement.classList.add('show');
+
+        // Create floating fart emoji
+        function createFartEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'fart-emoji';
+            emoji.textContent = fartEmojis[Math.floor(Math.random() * fartEmojis.length)];
             
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            emoji.style.left = `${x}px`;
+            emoji.style.bottom = '100px';
+            
+            document.body.appendChild(emoji);
+            
+            // Remove emoji after animation
             setTimeout(() => {
-                achievement.classList.remove('show');
+                emoji.remove();
             }, 3000);
         }
-        
-        // Create confetti effect
-        function createConfetti() {
-            const colors = ['#ff00ff', '#00ffff', '#ffff00', '#ff00aa', '#00ff00'];
-            
-            for (let i = 0; i < 50; i++) {
+
+        // Fart button click event
+        fartButton.addEventListener('click', playFartSound);
+
+        // Fact cards click events
+        const factCards = document.querySelectorAll('.fact-card');
+        factCards.forEach(card => {
+            card.addEventListener('click', () => {
+                playFartSound();
+                card.style.transform = 'scale(1.05) rotate(2deg)';
                 setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * window.innerWidth + 'px';
-                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, 5000);
-                }, i * 30);
+                    card.style.transform = '';
+                }, 300);
+            });
+        });
+
+        // Secret button and modal
+        const secretButton = document.getElementById('secretButton');
+        const secretModal = document.getElementById('secretModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalButton = document.getElementById('modalButton');
+
+        secretButton.addEventListener('click', () => {
+            secretModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            secretModal.style.display = 'none';
+        });
+
+        modalButton.addEventListener('click', () => {
+            secretModal.style.display = 'none';
+            // Play multiple fart sounds
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    playFartSound();
+                }, i * 200);
             }
-        }
-        
-        // Show hidden message after 5 seconds
-        setTimeout(() => {
-            const hiddenMessage = document.getElementById('hiddenMessage');
-            hiddenMessage.classList.add('show');
             
-            setTimeout(() => {
-                hiddenMessage.classList.remove('show');
-            }, 5000);
-        }, 5000);
-        
-        // Secret code functionality
-        const easterEgg = document.getElementById('easterEgg');
-        const secretCode = document.getElementById('secretCode');
-        const codeInput = document.getElementById('codeInput');
-        const submitCode = document.getElementById('submitCode');
-        
-        easterEgg.addEventListener('click', function() {
-            secretCode.classList.add('show');
-        });
-        
-        submitCode.addEventListener('click', function() {
-            const code = codeInput.value.toLowerCase();
-            
-            if (code === 'fart' || code === 'poop' || code === 'gas') {
-                alert("Congratulations! You've unlocked Osama's secret ability: Unlimited Farts!");
-                for (let i = 0; i < 10; i++) {
-                    setTimeout(() => {
-                        fartButton.click();
-                    }, i * 200);
-                }
-                secretCode.classList.remove('show');
-                codeInput.value = '';
-            } else {
-                alert("Wrong code! Hint: Think about what Osama does best...");
+            // Create multiple emojis
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFartEmoji();
+                }, i * 100);
             }
         });
-        
-        // Close secret code when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!secretCode.contains(event.target) && event.target !== easterEgg) {
-                secretCode.classList.remove('show');
+
+        // Click outside modal to close
+        window.addEventListener('click', (event) => {
+            if (event.target === secretModal) {
+                secretModal.style.display = 'none';
             }
         });
-        
-        // Random fart sounds on page load
-        window.addEventListener('load', function() {
+
+        // Random fart on page load
+        window.addEventListener('load', () => {
             setTimeout(() => {
                 playFartSound();
-                const fartCloud = document.createElement('div');
-                fartCloud.className = 'fart-cloud';
-                fartCloud.textContent = '💨';
-                fartCloud.style.left = Math.random() * window.innerWidth + 'px';
-                fartCloud.style.top = Math.random() * window.innerHeight + 'px';
-                document.body.appendChild(fartCloud);
-                
-                setTimeout(() => {
-                    fartCloud.remove();
-                }, 3000);
-            }, 2000);
+            }, 1000);
         });
-        
-        // Konami code for extra surprise
-        let konamiCode = [];
-        const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        
-        document.addEventListener('keydown', function(e) {
-            konamiCode.push(e.key);
-            konamiCode = konamiCode.slice(-10);
-            
-            if (JSON.stringify(konamiCode) === JSON.stringify(konamiPattern)) {
-                alert("You've unlocked the Konami Fart! Osama's ultimate move!");
-                for (let i = 0; i < 30; i++) {
-                    setTimeout(() => {
-                        fartButton.click();
-                    }, i * 100);
-                }
-                createConfetti();
+
+        // Keyboard shortcut for fart (spacebar)
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space') {
+                event.preventDefault();
+                playFartSound();
             }
         });
     </script>
